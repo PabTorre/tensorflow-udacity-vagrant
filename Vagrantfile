@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     default.vm.provision "shell", inline:
        "ps aux | grep 'sshd:' | awk '{print $2}' | xargs kill"
 
-    default.vm.box = "phusion/ubuntu-14.04-amd64"
+    default.vm.box = "ubuntu/trusty64"
 
     default.vm.network "forwarded_port", guest: 8888, host: 8888
     default.vm.network "forwarded_port", guest: 6006, host: 6006
